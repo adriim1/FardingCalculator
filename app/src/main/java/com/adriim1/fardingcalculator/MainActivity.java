@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         int[] idBotones = {
                 R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9,
                 R.id.btnSumar, R.id.btnRestar, R.id.btnMultiplicar, R.id.btnDividir,
-                R.id.btnIgual, R.id.btnPunto, R.id.btnC
+                R.id.btnIgual, R.id.btnPunto, R.id.btnC, R.id.btnPorcentaje, R.id.btnAC
         };
 
         View.OnClickListener listener = new View.OnClickListener() {
@@ -61,8 +61,14 @@ public class MainActivity extends AppCompatActivity {
             case "C":
                 manejarClear();
                 break;
+            case "AC":
+                manejarAllClear();
+                break;
             case ".":
                 manejarPunto();
+                break;
+            case "%":
+                manejarPorcentaje();
                 break;
         }
     }
@@ -109,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void manejarClear() {
         tvPantalla.setText("0");
+        nuevaEntrada = true;
+    }
+
+    private void manejarAllClear() {
+        tvPantalla.setText("0");
         primerNumero = 0;
         operacionActual = "";
         nuevaEntrada = true;
@@ -120,6 +131,15 @@ public class MainActivity extends AppCompatActivity {
             nuevaEntrada = false;
         } else if (!tvPantalla.getText().toString().contains(".")) {
             tvPantalla.append(".");
+        }
+    }
+
+    private void manejarPorcentaje() {
+        if (!tvPantalla.getText().toString().isEmpty()) {
+            double numero = Double.parseDouble(tvPantalla.getText().toString());
+            double resultado = numero / 100;
+            tvPantalla.setText(String.valueOf(resultado));
+            nuevaEntrada = true;
         }
     }
 

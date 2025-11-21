@@ -36,10 +36,18 @@
             android:id="@+id/btnC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="2"
-            android:layout_columnWeight="2"
+            android:layout_columnWeight="1"
             android:backgroundTint="#CCCCCC"
             android:text="C"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnPorcentaje"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:backgroundTint="#CCCCCC"
+            android:text="%"
             android:textSize="24sp" />
 
         <Button
@@ -186,10 +194,19 @@
             android:id="@+id/btnIgual"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="2"
-            android:layout_columnWeight="2"
+            android:layout_columnWeight="1"
             android:backgroundTint="#4CAF50"
             android:text="="
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnAC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:backgroundTint="#F44336"
+            android:text="AC"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
 
